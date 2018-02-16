@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="6" type="collection">
+        <element label="aasutosh" mandatory="true" max_length="40" name="aasutosh_new_record" type="string"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string" use_dependent_field="true">
+            <choice>
+                <element label="Cricket " sequence="0" value="ckt"/>
+                <element label="Football" sequence="1" value="fb"/>
+                <element label="Kabaadi" sequence="2" value="kb"/>
+                <element label="Basketball" sequence="3" value="bb"/>
+                <element label="Table tenis" sequence="4" value="tt"/>
+                <element label="Snooker" sequence="5" value="sn"/>
+                <element label="Batminton" sequence="6" value="bm"/>
+                <element label="Swimming" sequence="7" value="sw"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="ckt 1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="Cricket 1" sequence="0" value="ckt 1"/>
+                <element label="Cricket 2" sequence="1" value="ckt 2"/>
+                <element label="Football 1" sequence="2" value="fb 1"/>
+                <element label="Football 2" sequence="3" value="fb 2"/>
+                <element label="Kabaadi 1" sequence="4" value="Kb 1"/>
+                <element label="Kabaadi 2" sequence="5" value="kb 2"/>
+            </choice>
+        </element>
+        <element label="when needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
